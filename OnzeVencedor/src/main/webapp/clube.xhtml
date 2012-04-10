@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Clube</title>
+</h:head>
+<h:body>
+	<h:messages globalOnly="true" />
+	<h:form id="formPesquisa" rendered="#{!clubeBean.editMode}">
+		<h:commandLink value="Adicionar Clube" actionListener="#{clubeBean.create}"/>
+		<h:panelGrid columns="2">
+			<h:panelGroup>
+				<h:outputText value="Filtro:" />
+				<h:inputText maxlength="30" size="30" value="#{clubeBean.nomeClube}">
+					<f:ajax event="keyup" render="resultados"
+						listener="#{clubeBean.filtrarClube}" />
+				</h:inputText>
+			</h:panelGroup>
+		</h:panelGrid>
+		<h:dataTable value="#{clubeBean.clubes}" var="clube" id="resultados" border="1">
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+				<h:outputText value="#{clube.idf}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nome do Clube</f:facet>
+				<h:outputText value="#{clube.nome}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">#</f:facet>
+				<h:commandLink value="Alterar" action="#{clubeBean.update}">
+					<f:setPropertyActionListener target="#{clubeBean.clube}"
+						value="#{clube}" />
+				</h:commandLink>
+			</h:column>
+			<h:column>
+				<f:facet name="header">#</f:facet>
+				<h:commandLink id="lnkDelete" value="Excluir"
+					onclick="if (!confirm('Tem certeza que deseja excluir este dado?')) return false"
+					action="#{clubeBean.delete}">
+					<f:setPropertyActionListener target="#{clubeBean.clube}"
+						value="#{clube}" />
+				</h:commandLink>
+			</h:column>
+		</h:dataTable>
+	</h:form>
+	<h:form id="formEdicao" rendered="#{clubeBean.editMode}">
+		<h:panelGrid columns="2">
+			<h:outputText value="Nome do clube:"/>
+			<h:inputText maxlength="30" size="30" value="#{clubeBean.clube.nome}"/>
+		</h:panelGrid>
+		<h:commandButton value="Salvar" actionListener="#{clubeBean.salvar}"/>
+		<h:commandButton value="Cancelar" action="clube"/>
+	</h:form>
+</h:body>
+</html>

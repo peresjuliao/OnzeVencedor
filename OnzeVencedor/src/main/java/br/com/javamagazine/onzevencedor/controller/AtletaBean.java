@@ -7,17 +7,14 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.AjaxBehaviorEvent;
 
-import org.springframework.stereotype.Controller;
-
 import br.com.javamagazine.onzevencedor.entity.Atleta;
 import br.com.javamagazine.onzevencedor.entity.Clube;
 import br.com.javamagazine.onzevencedor.entity.Posicao;
 import br.com.javamagazine.onzevencedor.service.AtletaService;
 import br.com.javamagazine.onzevencedor.service.ClubeService;
 
-@ManagedBean
+@ManagedBean(name="atletaBean")
 @ViewScoped
-@Controller
 public class AtletaBean extends BaseBean {
 	
 	/**

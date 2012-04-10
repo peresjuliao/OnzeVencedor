@@ -13,7 +13,7 @@
 	<!-- Seta anotaçoes para serem usadas pelo Spring -->
 	<context:annotation-config />
 	<!-- Define o pacote onde o Spring vai procurar por beans anotados -->
-	<context:component-scan base-package="br.com.javamagazine.onzevencedor.service,br.com.javamagazine.onzevencedor.dao, br.com.javamagazine.onzevencedor.controller" />
+	<context:component-scan base-package="br.com.javamagazine.onzevencedor.service,br.com.javamagazine.onzevencedor.dao" />
 	
 	<!-- define que as transaçoes irao ser anotadas -->
 	<tx:annotation-driven />
@@ -23,7 +23,7 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost:3306/OnzeVencedorDB" />
 		<property name="username" value="root" />
-		<property name="password" value="root" />
+		<property name="password" value="41030097" />
 	</bean>
 	<!-- Configuracao do Hibernate -->
 	<bean id="entityManagerFactory"

@@ -11,10 +11,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.javamagazine.onzevencedor.entity.Clube;
 
-@Repository
+@Repository("clubeDao")
 public class ClubeDAO {
 	
-	@PersistenceContext(unitName="onzeVencedorPu")
+	@PersistenceContext
 	protected EntityManager entityManager;
 	
 	@SuppressWarnings("unchecked")
@@ -68,4 +68,5 @@ public class ClubeDAO {
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
+
 }

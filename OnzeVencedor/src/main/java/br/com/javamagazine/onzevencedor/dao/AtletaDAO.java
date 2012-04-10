@@ -11,10 +11,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.javamagazine.onzevencedor.entity.Atleta;
 
-@Repository
+@Repository("atletaDao")
 public class AtletaDAO {
 	
-	@PersistenceContext(unitName="onzeVencedorPu")
+	@PersistenceContext
 	protected EntityManager entityManager;
 
 	public void setEntityManager(
