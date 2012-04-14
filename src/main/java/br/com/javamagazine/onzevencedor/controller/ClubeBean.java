@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.AjaxBehaviorEvent;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import br.com.javamagazine.onzevencedor.entity.Clube;
@@ -21,7 +22,9 @@ public class ClubeBean extends BaseBean{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	@ManagedProperty("#{clubeService}")
+	@Autowired
 	private ClubeService model;
 	private Clube clube;
 	private List<Clube> clubes;
@@ -32,6 +35,7 @@ public class ClubeBean extends BaseBean{
 		return model;
 	}
 
+	
 	public void setModel(ClubeService model) {
 		this.model = model;
 	}

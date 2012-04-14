@@ -14,7 +14,7 @@ import br.com.javamagazine.onzevencedor.entity.Atleta;
 @Repository
 public class AtletaDAO {
 	
-	@PersistenceContext(unitName="onzeVencedorPu")
+	@PersistenceContext
 	protected EntityManager entityManager;
 
 	public void setEntityManager(

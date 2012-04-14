@@ -13,7 +13,7 @@
 	<!-- Seta anotaçoes para serem usadas pelo Spring -->
 	<context:annotation-config />
 	<!-- Define o pacote onde o Spring vai procurar por beans anotados -->
-	<context:component-scan base-package="br.com.javamagazine.onzevencedor.service,br.com.javamagazine.onzevencedor.dao, br.com.javamagazine.onzevencedor.controller" />
+	<context:component-scan base-package="br.com.javamagazine.onzevencedor.service,br.com.javamagazine.onzevencedor.dao,br.com.javamagazine.onzevencedor.controller" />
 	
 	<!-- define que as transaçoes irao ser anotadas -->
 	<tx:annotation-driven />

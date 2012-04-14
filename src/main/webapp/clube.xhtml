@@ -14,7 +14,7 @@
 		<h:panelGrid columns="2">
 			<h:panelGroup>
 				<h:outputText value="Filtro:" />
-				<h:inputText maxlength="30" size="30" value="#{clubeBean.nomeClube}">
+				<h:inputText maxlength="30" size="30" value="#{clubeBean.clube.nome}">
 					<f:ajax event="keyup" render="resultados"
 						listener="#{clubeBean.filtrarClube}" />
 				</h:inputText>

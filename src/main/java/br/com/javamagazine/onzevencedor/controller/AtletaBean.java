@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.event.AjaxBehaviorEvent;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import br.com.javamagazine.onzevencedor.entity.Atleta;
@@ -32,9 +33,11 @@ public class AtletaBean extends BaseBean {
 	private List<Atleta> atletas;
 
 	@ManagedProperty("#{clubeService}")
+	@Autowired
 	private ClubeService clubeService;
 	
 	@ManagedProperty("#{atletaService}")
+	@Autowired
 	private AtletaService atletaService;
 	
 	public void salvar(){

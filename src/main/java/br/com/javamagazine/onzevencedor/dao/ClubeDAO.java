@@ -14,7 +14,7 @@ import br.com.javamagazine.onzevencedor.entity.Clube;
 @Repository
 public class ClubeDAO {
 	
-	@PersistenceContext(unitName="onzeVencedorPu")
+	@PersistenceContext
 	protected EntityManager entityManager;
 	
 	@SuppressWarnings("unchecked")
